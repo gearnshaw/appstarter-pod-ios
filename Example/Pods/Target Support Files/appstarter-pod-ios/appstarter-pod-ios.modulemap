@@ -1,0 +1,6 @@
+framework module appstarter_pod_ios {
+  umbrella header "appstarter-pod-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

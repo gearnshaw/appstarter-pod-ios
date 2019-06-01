@@ -1,5 +1,5 @@
 import XCTest
-import appstarter-pod-ios
+import appstarter_pod_ios
 
 class Tests: XCTestCase {
     
