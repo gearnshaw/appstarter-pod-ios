@@ -10,30 +10,22 @@
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
 ## Misc
-projectDescription = "Cf1Common iOS"
+projectDescription = "appstarter-pod-ios"
 
 ## Xcode
-workspace = "Example/Cf1Common.xcworkspace"
-testScheme = "Cf1Common-Example"
-testDevices = ["iPhone 8"]
+workspace = "Example/appstarter-pod-ios.xcworkspace"
+testScheme = "appstarter-pod-ios-Example"
+testDevices = ["iPhone X"]
 xcodeVersion = "~> 10.2"
 version = ""
 
 ## cocoapods
-podSpecRepoPrivate = "https://bitbucket.org/controlf1/cf1-specs-private"
-podSpecRepoPublic = "https://bitbucket.org/controlf1/cf1-specs"
-trunkRepo = "https://github.com/CocoaPods/Specs.git"
-podSpecPath = "Cf1Common.podspec"
+podSpecPath = "appstarter-pod-ios.podspec"
 podFilePath = "./Example"
 
-## Build server
-buildUrlDevelop = "https://build10.controlf1.co.uk/viewType.html?buildTypeId=MobileCommonCode_Cf1CommonDeployCocoaPod"
-buildUrlReleasePublic = "https://build10.controlf1.co.uk/viewType.html?buildTypeId=IOSCommonCode_Cf1CommonDeployCocoaPodToPublicRepo"
-buildUrl = ""
-
-## Slack
+## Build
 buildDescription = "Unknown build"
-slackUrl = ENV['FASTLANE_SLACK_HOOK']
+buildUrl = "Local build"
 
 default_platform(:ios)
 
@@ -41,74 +33,25 @@ platform :ios do
   desc "Run before submitting for pull request"
   lane :beforePullRequest do
       buildDescription = "beforePullRequest"
-      buildUrl = "Local build"
       xcversion(version: xcodeVersion)
       lint
       tests
-      podSources = [podSpecRepoPrivate, trunkRepo]
-      podLint(podSources: podSources)
-      notifyBuildSuccess
-  end
-
-  desc "Test and lint the cocoapod without releasing."
-  lane :testAndLint do
-      buildDescription = "Build and lint of #{projectDescription}"
-      buildUrl = buildUrlDevelop
-      notifyBuildStart
-      xcversion(version: xcodeVersion)
-      ensureClean(branch: 'develop')
-      pods
-      lint
-      tests
-      podSources = [podSpecRepoPrivate, trunkRepo]
-      podLint(podSources: podSources)
+      podLint
       notifyBuildSuccess
   end
 
   desc "Run on merge to develop. Test and lint, increment the version in the podspec, push to the private repo"
   lane :releaseNewPodVersion do
       buildDescription = "Releasing #{projectDescription} cocoapod to private repo"
-      buildUrl = buildUrlDevelop
       notifyBuildStart
       xcversion(version: xcodeVersion)
       ensureClean(branch: 'develop')
       pods
       lint
       tests
-      podSources = [podSpecRepoPrivate, trunkRepo]
-      podLint(podSources: podSources)
+      podLint
       incrementAndTag
-      push(podSpecRepo: podSpecRepoPrivate, podSources: podSources)
-      notifyBuildSuccess
-  end
-
-  desc "Run on a given tag. Test and lint, push to the public repo. NB this doesn't increment version numbers."
-  lane :releasePodToPublicRepo do
-      buildDescription = "Releasing #{projectDescription} cocoapod to public repo"
-      buildUrl = buildUrlReleasePublic
-      notifyBuildStart
-      xcversion(version: xcodeVersion)
-      cocoapods(podfile: podFilePath)
-      lint
-      tests
-      podSources = [podSpecRepoPublic, trunkRepo]
-      podLint(podSources: podSources)
-      push(podSpecRepo: podSpecRepoPublic, podSources: podSources)
-      version = version_get_podspec
-      notifyBuildSuccess
-  end
-
-  desc "Add hoc lane for testing on a branch other than develop."
-  lane :adHocBuild do
-      buildDescription = "Ad hoc build and lint of #{projectDescription}"
-      buildUrl = buildUrlDevelop
-      notifyBuildStart
-      xcversion(version: xcodeVersion)
-      pods
-      lint
-      tests
-      podSources = [podSpecRepoPrivate, trunkRepo]
-      podLint(podSources: podSources)
+      push
       notifyBuildSuccess
   end
 
@@ -119,10 +62,7 @@ platform :ios do
 
   desc "Push the pod to the repo"
   lane :push do |values|
-      pod_push(
-          repo: values[:podSpecRepo],
-          sources: values[:podSources]
-      )
+      pod_push
   end
 
   desc "Increment the version in the podspec, tag in git, and push the changes"
@@ -139,10 +79,8 @@ platform :ios do
   end
 
   desc "Lint the pod"
-  lane :podLint do |values|
-      pod_lib_lint(
-          sources: values[:podSources]
-      )
+  lane :podLint do
+      pod_lib_lint
   end
 
   desc "Lint the project"
@@ -201,14 +139,7 @@ platform :ios do
 
   lane :notifyBuild do |values|
       if is_ci?
-          # Only spam slack from the build server
-          slack(
-              slack_url: slackUrl,
-              message: values[:message],
-              default_payloads: [],
-              success: values[:success],
-              fail_on_error: false
-          )
+          # Don't do anything if we're on a build server
       else
           title = ""
           if values[:success]

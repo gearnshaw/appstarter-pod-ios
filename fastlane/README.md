@@ -21,26 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane ios beforePullRequest
 ```
 Run before submitting for pull request
-### ios testAndLint
-```
-fastlane ios testAndLint
-```
-Test and lint the cocoapod without releasing.
 ### ios releaseNewPodVersion
 ```
 fastlane ios releaseNewPodVersion
 ```
 Run on merge to develop. Test and lint, increment the version in the podspec, push to the private repo
-### ios releasePodToPublicRepo
-```
-fastlane ios releasePodToPublicRepo
-```
-Run on a given tag. Test and lint, push to the public repo. NB this doesn't increment version numbers.
-### ios adHocBuild
-```
-fastlane ios adHocBuild
-```
-Add hoc lane for testing on a branch other than develop.
 ### ios pods
 ```
 fastlane ios pods
