@@ -12,10 +12,12 @@
 		0D8ED03E6CD0451D82EA5B5A8EC23CFB /* Pods-appstarter-pod-ios_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC4E0E7A1C63590363EFF7A7E31EA21 /* Pods-appstarter-pod-ios_Example-dummy.m */; };
 		0EF2069B4C3CB3FF4ED3FB3B457A7049 /* Pods-appstarter-pod-ios_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5FDE1CEC3821694DD17B3BFE98AAA5 /* Pods-appstarter-pod-ios_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1544AB8355FD30E71D38F004F0BE8902 /* Pods-appstarter-pod-ios_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C16DCA077CE77337EF29C909D5CE49D0 /* Pods-appstarter-pod-ios_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		400053CB38815447CC7DDB6A1321F307 /* appstarter-pod-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2ED6C39A46822919F7EBC6684EDF87 /* appstarter-pod-ios-dummy.m */; };
-		68DDAAD492FD5D93247972889B6AC2CF /* appstarter-pod-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C4C07E16238CBA85C0EB313A3637A1C /* appstarter-pod-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9ACAA6E90C17BEA1D2ECD81CFD0F3349 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F960A892E7948101FB0DFBD871DF7 /* ReplaceMe.swift */; };
-		AA2033D7000FFE8E0B6000519B68536C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		4EF3C96957D099517D60DC937783A7BD /* StyledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0853C7F9A26A45EF00AD97DB38B9E6 /* StyledFont.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		52745E379FEDF896FB65CF1712E7F49A /* SizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A376FC712EB2EADA705B65E4FA236FF /* SizeProvider.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		575919A0F8E11569C92C8FDFCA09C3DE /* appstarter-pod-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B656E123F1296794D6781E032279F173 /* appstarter-pod-ios-dummy.m */; };
+		936C7091DE8F51DF80F4E669AA08F4F7 /* appstarter-pod-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BDBAE8F7D97E5BC7FFD370EF78462E88 /* appstarter-pod-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		944846D22E9E209F9C9C90C4EA4928EC /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB53E141C8588C91C05B32029FBA04 /* StyledButton.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D2B34C87F9F18B3BD9DE88C07E2EE9A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E6A6B0404602958D977EC9D961C12387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,34 +40,36 @@
 
 /* Begin PBXFileReference section */
 		022E0057A1ECAF7FF3A1FA822D017448 /* Pods-appstarter-pod-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-appstarter-pod-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		09BADCDB0A760DE03B324DA005FF85D0 /* appstarter-pod-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "appstarter-pod-ios.xcconfig"; sourceTree = "<group>"; };
 		0A25EAC586C4198E0CA9F82188EB574F /* Pods-appstarter-pod-ios_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-appstarter-pod-ios_Tests-Info.plist"; sourceTree = "<group>"; };
-		0B2ED6C39A46822919F7EBC6684EDF87 /* appstarter-pod-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "appstarter-pod-ios-dummy.m"; sourceTree = "<group>"; };
+		0E2FB1CA9A2CCA021928087FA68F8FF1 /* appstarter-pod-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "appstarter-pod-ios-prefix.pch"; sourceTree = "<group>"; };
+		26EB53E141C8588C91C05B32029FBA04 /* StyledButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyledButton.swift; path = "appstarter-pod-ios/Classes/style/StyledButton.swift"; sourceTree = "<group>"; };
 		293BA4B1F62B2EB6B92CC6FD2804603A /* Pods-appstarter-pod-ios_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-appstarter-pod-ios_Tests-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3B16C17EE10D8881A8F1ED968F57EDBF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		37AF5CA3C3181087E915BCD84F385929 /* appstarter-pod-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "appstarter-pod-ios.xcconfig"; sourceTree = "<group>"; };
 		4214EC1F152F698F544A7AB9CAA361DD /* Pods-appstarter-pod-ios_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-appstarter-pod-ios_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4B85782D817768FAA63E27DEAEA967BC /* appstarter_pod_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = appstarter_pod_ios.framework; path = "appstarter-pod-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB1197F6B3E9A7F1D51447793BB09AA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		554244CC4B666C4582A2DEEC59404831 /* Pods-appstarter-pod-ios_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-appstarter-pod-ios_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		57EA25C86E7A0AB46D6CF37C3B7BBECF /* appstarter-pod-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "appstarter-pod-ios.modulemap"; sourceTree = "<group>"; };
 		5883EE94000020633ED5C4977D92B921 /* Pods-appstarter-pod-ios_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-appstarter-pod-ios_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5A376FC712EB2EADA705B65E4FA236FF /* SizeProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeProvider.swift; path = "appstarter-pod-ios/Classes/style/SizeProvider.swift"; sourceTree = "<group>"; };
 		5AE035D46172641CC66446791F9B456D /* Pods-appstarter-pod-ios_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-appstarter-pod-ios_Example.modulemap"; sourceTree = "<group>"; };
 		5BC7BA707464D7E2D12C5806E90CCBD9 /* Pods-appstarter-pod-ios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-appstarter-pod-ios_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5F9C082214EE58A4A27590C345E26BF4 /* appstarter-pod-ios.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "appstarter-pod-ios.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6C0853C7F9A26A45EF00AD97DB38B9E6 /* StyledFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyledFont.swift; path = "appstarter-pod-ios/Classes/style/StyledFont.swift"; sourceTree = "<group>"; };
 		6CEF688B2A424AF67FB75C2DC42FC391 /* Pods-appstarter-pod-ios_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-appstarter-pod-ios_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6F7C64B9FFDFBC938863FDCD33AB4C49 /* appstarter-pod-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "appstarter-pod-ios-Info.plist"; sourceTree = "<group>"; };
 		7DC4E0E7A1C63590363EFF7A7E31EA21 /* Pods-appstarter-pod-ios_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-appstarter-pod-ios_Example-dummy.m"; sourceTree = "<group>"; };
-		8001F682AAE48AD0275B9A6BAC85EBE9 /* appstarter-pod-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "appstarter-pod-ios-prefix.pch"; sourceTree = "<group>"; };
 		820A9400C8EA7548BCAE3EC004FB3F72 /* Pods-appstarter-pod-ios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-appstarter-pod-ios_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		84F4E8D15F7A287E0C7B0FAD5D5E135C /* Pods-appstarter-pod-ios_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-appstarter-pod-ios_Example-frameworks.sh"; sourceTree = "<group>"; };
-		8C4C07E16238CBA85C0EB313A3637A1C /* appstarter-pod-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "appstarter-pod-ios-umbrella.h"; sourceTree = "<group>"; };
+		86181DA0849FE1FBB9EC2EA43F9BF65B /* appstarter-pod-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "appstarter-pod-ios-Info.plist"; sourceTree = "<group>"; };
+		89857024CCE5114C43CB3A96ED70203C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8C8FC9EF7647F14543D4C9E164EEB135 /* appstarter-pod-ios.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "appstarter-pod-ios.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		938C48BA2D7A8613F0233F3AE9988B50 /* Pods-appstarter-pod-ios_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-appstarter-pod-ios_Example-Info.plist"; sourceTree = "<group>"; };
 		99D456BE8F8A6889F86B6E173E2F76EA /* Pods_appstarter_pod_ios_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_appstarter_pod_ios_Example.framework; path = "Pods-appstarter-pod-ios_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BAAC162CD16F9486578B77610A6584F3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B656E123F1296794D6781E032279F173 /* appstarter-pod-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "appstarter-pod-ios-dummy.m"; sourceTree = "<group>"; };
 		BC27C7352ADE42D7432F9F6270077D3B /* Pods_appstarter_pod_ios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_appstarter_pod_ios_Tests.framework; path = "Pods-appstarter-pod-ios_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDBAE8F7D97E5BC7FFD370EF78462E88 /* appstarter-pod-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "appstarter-pod-ios-umbrella.h"; sourceTree = "<group>"; };
 		C16DCA077CE77337EF29C909D5CE49D0 /* Pods-appstarter-pod-ios_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-appstarter-pod-ios_Example-umbrella.h"; sourceTree = "<group>"; };
-		CD2F960A892E7948101FB0DFBD871DF7 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = "appstarter-pod-ios/Classes/ReplaceMe.swift"; sourceTree = "<group>"; };
+		CC77CEF954308869A5826D7BE2F9F8A8 /* appstarter-pod-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "appstarter-pod-ios.modulemap"; sourceTree = "<group>"; };
 		CF5FDE1CEC3821694DD17B3BFE98AAA5 /* Pods-appstarter-pod-ios_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-appstarter-pod-ios_Tests-umbrella.h"; sourceTree = "<group>"; };
 		EBBD003A6781595E2A327B8F83516BEF /* Pods-appstarter-pod-ios_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-appstarter-pod-ios_Tests.modulemap"; sourceTree = "<group>"; };
 		F1F0B42BB22BDFA8FE79669EC9F3F2F7 /* Pods-appstarter-pod-ios_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-appstarter-pod-ios_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -88,11 +92,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59E7E36BCE519D2BEF899108E8AD0F88 /* Frameworks */ = {
+		71217868CE6872CE4CFC2451CBE0E835 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA2033D7000FFE8E0B6000519B68536C /* Foundation.framework in Frameworks */,
+				D2B34C87F9F18B3BD9DE88C07E2EE9A6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,30 +110,6 @@
 				636396C6FA9BE08444156DD1F8BD7B9C /* Pods-appstarter-pod-ios_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		2456F78A880822D01AB7FC0A5D8318D1 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				57EA25C86E7A0AB46D6CF37C3B7BBECF /* appstarter-pod-ios.modulemap */,
-				09BADCDB0A760DE03B324DA005FF85D0 /* appstarter-pod-ios.xcconfig */,
-				0B2ED6C39A46822919F7EBC6684EDF87 /* appstarter-pod-ios-dummy.m */,
-				6F7C64B9FFDFBC938863FDCD33AB4C49 /* appstarter-pod-ios-Info.plist */,
-				8001F682AAE48AD0275B9A6BAC85EBE9 /* appstarter-pod-ios-prefix.pch */,
-				8C4C07E16238CBA85C0EB313A3637A1C /* appstarter-pod-ios-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/appstarter-pod-ios";
-			sourceTree = "<group>";
-		};
-		4B2745D8E3C5721F82A90F75203AB9F8 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				5F9C082214EE58A4A27590C345E26BF4 /* appstarter-pod-ios.podspec */,
-				3B16C17EE10D8881A8F1ED968F57EDBF /* LICENSE */,
-				BAAC162CD16F9486578B77610A6584F3 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		636396C6FA9BE08444156DD1F8BD7B9C /* Pods-appstarter-pod-ios_Tests */ = {
@@ -148,12 +128,28 @@
 			path = "Target Support Files/Pods-appstarter-pod-ios_Tests";
 			sourceTree = "<group>";
 		};
-		938A226045E473C86B555CC870A23048 /* Development Pods */ = {
+		745E15656BBE7833D7D1F1F0B3FE8255 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E7966FB2046E403A746A3F30DD79E443 /* appstarter-pod-ios */,
+				CC77CEF954308869A5826D7BE2F9F8A8 /* appstarter-pod-ios.modulemap */,
+				37AF5CA3C3181087E915BCD84F385929 /* appstarter-pod-ios.xcconfig */,
+				B656E123F1296794D6781E032279F173 /* appstarter-pod-ios-dummy.m */,
+				86181DA0849FE1FBB9EC2EA43F9BF65B /* appstarter-pod-ios-Info.plist */,
+				0E2FB1CA9A2CCA021928087FA68F8FF1 /* appstarter-pod-ios-prefix.pch */,
+				BDBAE8F7D97E5BC7FFD370EF78462E88 /* appstarter-pod-ios-umbrella.h */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/appstarter-pod-ios";
+			sourceTree = "<group>";
+		};
+		B3C8AC821C042C455A7787B437493D9C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8C8FC9EF7647F14543D4C9E164EEB135 /* appstarter-pod-ios.podspec */,
+				4EB1197F6B3E9A7F1D51447793BB09AA /* LICENSE */,
+				89857024CCE5114C43CB3A96ED70203C /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -164,11 +160,32 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C45C990BA91BAC031320393AD30942C2 /* appstarter-pod-ios */ = {
+			isa = PBXGroup;
+			children = (
+				5A376FC712EB2EADA705B65E4FA236FF /* SizeProvider.swift */,
+				26EB53E141C8588C91C05B32029FBA04 /* StyledButton.swift */,
+				6C0853C7F9A26A45EF00AD97DB38B9E6 /* StyledFont.swift */,
+				B3C8AC821C042C455A7787B437493D9C /* Pod */,
+				745E15656BBE7833D7D1F1F0B3FE8255 /* Support Files */,
+			);
+			name = "appstarter-pod-ios";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C93302C5417F21A0BABD5B8371E57CA8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C45C990BA91BAC031320393AD30942C2 /* appstarter-pod-ios */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				938A226045E473C86B555CC870A23048 /* Development Pods */,
+				C93302C5417F21A0BABD5B8371E57CA8 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				D4AD60E3C79432138AC8946889EC09D0 /* Products */,
 				011108F3BC82F603694AD869119DCB91 /* Targets Support Files */,
@@ -191,17 +208,6 @@
 				BC27C7352ADE42D7432F9F6270077D3B /* Pods_appstarter_pod_ios_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E7966FB2046E403A746A3F30DD79E443 /* appstarter-pod-ios */ = {
-			isa = PBXGroup;
-			children = (
-				CD2F960A892E7948101FB0DFBD871DF7 /* ReplaceMe.swift */,
-				4B2745D8E3C5721F82A90F75203AB9F8 /* Pod */,
-				2456F78A880822D01AB7FC0A5D8318D1 /* Support Files */,
-			);
-			name = "appstarter-pod-ios";
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		F34D1B699C34ACF16FF7CFE06DF1BFD9 /* Pods-appstarter-pod-ios_Example */ = {
@@ -240,11 +246,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E129C75F58577D3D3B4AE51C1FD8D969 /* Headers */ = {
+		73263833E07B92C121EB74B0D2BA3F8E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68DDAAD492FD5D93247972889B6AC2CF /* appstarter-pod-ios-umbrella.h in Headers */,
+				936C7091DE8F51DF80F4E669AA08F4F7 /* appstarter-pod-ios-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +259,12 @@
 /* Begin PBXNativeTarget section */
 		18C5BBCBB2047C632809C17F0C2051BF /* appstarter-pod-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3190497EA227510BE26E4B9992AA348 /* Build configuration list for PBXNativeTarget "appstarter-pod-ios" */;
+			buildConfigurationList = DE61A2F6D4BDC74C62DC0CD8825D7FD4 /* Build configuration list for PBXNativeTarget "appstarter-pod-ios" */;
 			buildPhases = (
-				E129C75F58577D3D3B4AE51C1FD8D969 /* Headers */,
-				B18B9AD1DFA7267242E54BAABD5D6428 /* Sources */,
-				59E7E36BCE519D2BEF899108E8AD0F88 /* Frameworks */,
-				E944DC97C4456788980B8CC005379FDF /* Resources */,
+				73263833E07B92C121EB74B0D2BA3F8E /* Headers */,
+				E66C0B551A3EFF2854486AC6A0227AF2 /* Sources */,
+				71217868CE6872CE4CFC2451CBE0E835 /* Frameworks */,
+				96EED6C0233806CB12B07BD637C1132E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -350,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E944DC97C4456788980B8CC005379FDF /* Resources */ = {
+		96EED6C0233806CB12B07BD637C1132E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,20 +374,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B18B9AD1DFA7267242E54BAABD5D6428 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				400053CB38815447CC7DDB6A1321F307 /* appstarter-pod-ios-dummy.m in Sources */,
-				9ACAA6E90C17BEA1D2ECD81CFD0F3349 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E27E4A33A2BFB1BCD1A535619F60279F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0D8ED03E6CD0451D82EA5B5A8EC23CFB /* Pods-appstarter-pod-ios_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66C0B551A3EFF2854486AC6A0227AF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575919A0F8E11569C92C8FDFCA09C3DE /* appstarter-pod-ios-dummy.m in Sources */,
+				52745E379FEDF896FB65CF1712E7F49A /* SizeProvider.swift in Sources */,
+				944846D22E9E209F9C9C90C4EA4928EC /* StyledButton.swift in Sources */,
+				4EF3C96957D099517D60DC937783A7BD /* StyledFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,9 +475,9 @@
 			};
 			name = Debug;
 		};
-		2AB4B25C25A44A0690C485A805C13F56 /* Debug */ = {
+		175FBB5DDDBFCE50ABCE50AC8D546DDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09BADCDB0A760DE03B324DA005FF85D0 /* appstarter-pod-ios.xcconfig */;
+			baseConfigurationReference = 37AF5CA3C3181087E915BCD84F385929 /* appstarter-pod-ios.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -495,10 +503,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		8E8A7D7153A0AF2C32A36B267C1A7EBC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -536,9 +545,9 @@
 			};
 			name = Release;
 		};
-		BFCAF382B78AA7F44783648AE65D85C8 /* Release */ = {
+		C437F85F7E89B09C5BE297BD63485ABF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09BADCDB0A760DE03B324DA005FF85D0 /* appstarter-pod-ios.xcconfig */;
+			baseConfigurationReference = 37AF5CA3C3181087E915BCD84F385929 /* appstarter-pod-ios.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -564,11 +573,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		E8CD5624DFF78AA29BE8EA6167A941D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -766,11 +774,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3190497EA227510BE26E4B9992AA348 /* Build configuration list for PBXNativeTarget "appstarter-pod-ios" */ = {
+		DE61A2F6D4BDC74C62DC0CD8825D7FD4 /* Build configuration list for PBXNativeTarget "appstarter-pod-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2AB4B25C25A44A0690C485A805C13F56 /* Debug */,
-				BFCAF382B78AA7F44783648AE65D85C8 /* Release */,
+				C437F85F7E89B09C5BE297BD63485ABF /* Debug */,
+				175FBB5DDDBFCE50ABCE50AC8D546DDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
