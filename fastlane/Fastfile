@@ -106,11 +106,7 @@ platform :ios do
         ensure_git_status_clean
 
         # Make sure we're on a branch called release
-        if is_ci?
-            ensure_git_branch(branch: values[:branch])
-        else
-            ensure_git_branch(branch: 'release')
-        end
+        ensure_git_branch(branch: values[:branch])
     end
 
   desc "Send a message to slack to say that the build has started"
