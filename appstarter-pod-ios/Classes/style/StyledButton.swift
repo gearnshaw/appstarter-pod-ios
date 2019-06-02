@@ -30,12 +30,12 @@ public struct StyledButton {
     fileprivate let insets: UIEdgeInsets
 
     public init(shape: Shape,
-         borderWidth: CGFloat,
-         borderColour: UIColor,
-         backgroundColour: UIColor,
-         titleStyle: StyledFont,
-         hasShadow: Bool,
-         insets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)) {
+                borderWidth: CGFloat,
+                borderColour: UIColor,
+                backgroundColour: UIColor,
+                titleStyle: StyledFont,
+                hasShadow: Bool,
+                insets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)) {
         self.shape = shape
         self.borderWidth = borderWidth
         self.borderColour = borderColour
@@ -51,7 +51,7 @@ public extension UIButton {
     /// Apply a styled button to a button
     ///
     /// - Parameter styledButton: the styled button to apply
-    public func apply(styledButton: StyledButton, title: String) {
+    func apply(styledButton: StyledButton, title: String) {
         // Title style and colours
         contentEdgeInsets = styledButton.insets
         setStyledFontTitle(styledFont: styledButton.titleStyle, title: title, for: .normal)
@@ -72,7 +72,7 @@ public extension UIButton {
     /// This must be called after the button has been laid out in the view
     ///
     /// - Parameter for: the styled button whose shape should be applied
-    public func updateShape(for styledButton: StyledButton) {
+    func updateShape(for styledButton: StyledButton) {
         switch styledButton.shape {
         case .circle:
             let smallestDimension = min(bounds.width, bounds.height)

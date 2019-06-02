@@ -79,7 +79,7 @@ public struct StyledFont {
 
     /// Get the colour that should be used, taking into account both the colour and the opacity
     var colour: UIColor {
-        return colour.withAlphaComponent(opacity)
+        return baseColour.withAlphaComponent(opacity)
     }
 
     /// Gets attributes for the styled font
@@ -136,7 +136,7 @@ public extension UIButton {
 
 // MARK: - Styled font helpers for UILabel
 public extension UILabel {
-    public func setStyledFont(styledFont: StyledFont) {
+    func setStyledFont(styledFont: StyledFont) {
         font = styledFont.font
         textColor = styledFont.colour
 
@@ -157,7 +157,7 @@ public extension UILabel {
 
 // MARK: - Styled font helpers for UITextView
 public extension UITextView {
-    public func setStyledFont(styledFont: StyledFont) {
+    func setStyledFont(styledFont: StyledFont) {
         font = styledFont.font
         textColor = styledFont.colour
 
@@ -178,13 +178,13 @@ public extension UITextView {
 
 // MARK: - Styled font helpers for UIBarButtonItem
 public extension UIBarButtonItem {
-    public func setStyledFont(styledFont: StyledFont, for controlState: UIControl.State) {
+    func setStyledFont(styledFont: StyledFont, for controlState: UIControl.State) {
         self.setTitleTextAttributes(styledFont.attributes, for: controlState)
     }
 }
 
 public extension CATextLayer {
-    public func setStyledFont(styledFont: StyledFont) {
+    func setStyledFont(styledFont: StyledFont) {
         font = CGFont(styledFont.font.fontName as CFString)
         fontSize = styledFont.font.pointSize
         foregroundColor = styledFont.colour.cgColor
