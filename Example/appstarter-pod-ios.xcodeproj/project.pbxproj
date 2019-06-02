@@ -510,7 +510,6 @@
 				DEVELOPMENT_TEAM = 622P8V8VHX;
 				INFOPLIST_FILE = "appstarter-pod-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,7 +525,6 @@
 				DEVELOPMENT_TEAM = 622P8V8VHX;
 				INFOPLIST_FILE = "appstarter-pod-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,10 +537,7 @@
 			baseConfigurationReference = BB15C402E750B738B723B241 /* Pods-appstarter-pod-ios_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 622P8V8VHX;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -561,10 +556,7 @@
 			baseConfigurationReference = 44AB18343B8226EC69C612A1 /* Pods-appstarter-pod-ios_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 622P8V8VHX;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
