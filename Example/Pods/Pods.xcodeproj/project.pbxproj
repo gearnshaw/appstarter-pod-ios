@@ -17,6 +17,7 @@
 		AA2033D7000FFE8E0B6000519B68536C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E6A6B0404602958D977EC9D961C12387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		FA43B62022A42E0700FFB5A7 /* SizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43B61F22A42E0000FFB5A7 /* SizeProvider.swift */; };
+		FA43B62222A42F7800FFB5A7 /* StyledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43B62122A42F7800FFB5A7 /* StyledFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		EBBD003A6781595E2A327B8F83516BEF /* Pods-appstarter-pod-ios_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-appstarter-pod-ios_Tests.modulemap"; sourceTree = "<group>"; };
 		F1F0B42BB22BDFA8FE79669EC9F3F2F7 /* Pods-appstarter-pod-ios_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-appstarter-pod-ios_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FA43B61F22A42E0000FFB5A7 /* SizeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizeProvider.swift; path = "appstarter-pod-ios/Classes/style/SizeProvider.swift"; sourceTree = "<group>"; };
+		FA43B62122A42F7800FFB5A7 /* StyledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyledFont.swift; path = "appstarter-pod-ios/Classes/style/StyledFont.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				FA43B61F22A42E0000FFB5A7 /* SizeProvider.swift */,
 				4B2745D8E3C5721F82A90F75203AB9F8 /* Pod */,
 				2456F78A880822D01AB7FC0A5D8318D1 /* Support Files */,
+				FA43B62122A42F7800FFB5A7 /* StyledFont.swift */,
 			);
 			name = "appstarter-pod-ios";
 			path = ../..;
@@ -373,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				400053CB38815447CC7DDB6A1321F307 /* appstarter-pod-ios-dummy.m in Sources */,
+				FA43B62222A42F7800FFB5A7 /* StyledFont.swift in Sources */,
 				FA43B62022A42E0700FFB5A7 /* SizeProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
