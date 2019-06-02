@@ -1,5 +1,5 @@
 PODS:
-  - appstarter-pod-ios (0.1.0)
+  - appstarter-pod-ios (0.1.1)
 
 DEPENDENCIES:
   - appstarter-pod-ios (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  appstarter-pod-ios: b85c2a2878c143f2bdea67972d1ef74550d83eec
+  appstarter-pod-ios: 610479c16222d0a267fe5b967e8ae95408380882
 
 PODFILE CHECKSUM: 5cec687f26d500baff8dad319531bd1835f8c0a0
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.1

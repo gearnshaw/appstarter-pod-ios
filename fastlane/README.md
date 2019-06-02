@@ -25,7 +25,7 @@ Run before submitting for pull request
 ```
 fastlane ios releaseNewPodVersion
 ```
-Run on merge to develop. Test and lint, increment the version in the podspec, push to the private repo
+Run to release the pod. Test and lint, increment the version in the podspec, push to the repo
 ### ios pods
 ```
 fastlane ios pods
