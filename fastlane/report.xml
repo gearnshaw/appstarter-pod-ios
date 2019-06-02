@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.011038">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="01: Switch to ios notifyBuildStart lane" time="0.001408">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: Switch to ios notifyBuild lane" time="0.001278">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: is_ci" time="0.001304">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: notification" time="0.25784">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: xcversion" time="1.840744">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: Switch to ios pods lane" time="0.001378">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: cocoapods" time="5.51684">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: Switch to ios lint lane" time="0.001251">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: swiftlint" time="0.282121">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: Switch to ios tests lane" time="0.001956">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: scan" time="39.799213">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: Switch to ios podLint lane" time="0.001232">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: pod_lib_lint" time="8.038998">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="14: Switch to ios incrementAndTag lane" time="0.001338">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="15: version_bump_podspec" time="0.00257">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="16: git_commit" time="0.045779">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="17: add_git_tag" time="0.016504">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="18: push_to_git_remote" time="3.618541">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="19: Switch to ios push lane" time="0.003496">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="20: pod_push" time="70.10918">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="21: Switch to ios notifyBuildSuccess lane" time="0.008182">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="22: Switch to ios notifyBuild lane" time="0.00167">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="23: is_ci" time="0.001604">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="24: notification" time="0.418164">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
