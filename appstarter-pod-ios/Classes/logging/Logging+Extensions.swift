@@ -23,7 +23,7 @@ public extension Logging {
     func warning(_ closure: @autoclosure () -> Any?) {
         XCGLogger.default.warning(closure: closure)
     }
-    
+
     func error(_ closure: @autoclosure () -> Any?) {
         XCGLogger.default.error(closure: closure)
     }
