@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ObjcExceptionBridging" "${PODS_CONFIGURATION_BUILD_DIR}/XCGLogger" "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios/appstarter_pod_ios.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XCGLogger/XCGLogger.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios/appstarter_pod_ios.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios/appstarter_pod_ios.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios"
-OTHER_LDFLAGS = $(inherited) -framework "appstarter_pod_ios"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/XCGLogger/XCGLogger.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios/appstarter_pod_ios.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/ObjcExceptionBridging" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/XCGLogger" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/appstarter-pod-ios"
+OTHER_LDFLAGS = $(inherited) -framework "ObjcExceptionBridging" -framework "XCGLogger" -framework "appstarter_pod_ios"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
