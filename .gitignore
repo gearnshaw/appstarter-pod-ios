@@ -38,3 +38,4 @@ Carthage/Build
 fastlane/test_output
 report.xml
 Example/Pods
+appstarter-playground.playground
