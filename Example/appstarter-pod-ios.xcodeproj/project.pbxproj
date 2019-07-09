@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		F9ABE9DFF230F7D6F11CDAD3 /* Pods_appstarter_pod_ios_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01883DA9714F74BF0D75B37B /* Pods_appstarter_pod_ios_Example.framework */; };
+		FA918F8222D4A14100401FF8 /* CallbackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA918F8122D4A14100401FF8 /* CallbackTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BB15C402E750B738B723B241 /* Pods-appstarter-pod-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appstarter-pod-ios_Tests.debug.xcconfig"; path = "Target Support Files/Pods-appstarter-pod-ios_Tests/Pods-appstarter-pod-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4D498F4F418678F57F6952 /* appstarter-pod-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "appstarter-pod-ios.podspec"; path = "../appstarter-pod-ios.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EDEFB356352039E9385CB5B1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FA918F8122D4A14100401FF8 /* CallbackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				FA918F8422D4A18B00401FF8 /* stubs */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -157,6 +160,14 @@
 				44AB18343B8226EC69C612A1 /* Pods-appstarter-pod-ios_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA918F8422D4A18B00401FF8 /* stubs */ = {
+			isa = PBXGroup;
+			children = (
+				FA918F8122D4A14100401FF8 /* CallbackTest.swift */,
+			);
+			path = stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA918F8222D4A14100401FF8 /* CallbackTest.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

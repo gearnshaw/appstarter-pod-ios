@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import appstarter_pod_ios
 
 class ViewController: UIViewController {
 
