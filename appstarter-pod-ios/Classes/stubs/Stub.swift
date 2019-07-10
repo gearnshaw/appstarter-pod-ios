@@ -30,9 +30,8 @@ public class Stub<R, P> {
     public var callbacks: [CallbackType: MockExecutable] = [:]
 
     // Record
-    fileprivate var _callCount = 0
-    fileprivate var _calledWith: P?
-    fileprivate var _calledWithHistory: [P] = []
+    private var _callCount = 0
+    private var _calledWithHistory: [P] = []
 
     public init(defaultRetval: R) {
         retval = defaultRetval
@@ -103,7 +102,6 @@ public class Stub<R, P> {
     /// - Parameter params: the parameters passed to the method
     fileprivate func recordExecution(params: P) {
         _callCount += 1
-        _calledWith = params
         _calledWithHistory.append(params)
     }
 
@@ -151,7 +149,7 @@ public extension Stub {
 
     /// Interrogate to find the last set of parameters that the method was called with
     var calledWith: P? {
-        return _calledWith
+        return calledWithHistory.last
     }
 
     /// Interrogate to find all parameters that the method was called with
