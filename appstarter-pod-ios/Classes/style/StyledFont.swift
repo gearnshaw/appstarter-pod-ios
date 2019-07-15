@@ -24,40 +24,90 @@ public struct StyledFont {
     /// Constants for the names of commonly used fonts.
     /// NB in order to use custom fonts, they must first be installed
     /// in the project: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
+    public typealias FontName = String
     public struct CustomFontNames {
-        public static let iconLight = "FontAwesome5Pro-Light"
-        public static let iconRegular =  "FontAwesome5Pro-Regular"
-        public static let iconSolid = "FontAwesome5Pro-Solid"
+        public static let iconLight: FontName = "FontAwesome5Pro-Light"
+        public static let iconRegular: FontName =  "FontAwesome5Pro-Regular"
+        public static let iconSolid: FontName = "FontAwesome5Pro-Solid"
     }
 
+    public typealias Opacity = CGFloat
     public struct Opacities {
-        public static let primary: CGFloat = 0.99
-        public static let secondary: CGFloat = 0.7
-        public static let disabled: CGFloat = 0.5
+        public static let primary: Opacity = 0.99
+        public static let secondary: Opacity = 0.7
+        public static let disabled: Opacity = 0.5
     }
 
+    /// Enum representing text alignment of the font style
     public enum Alignment {
         case left
         case centre
         case right
         case justified
+
+        /// Convert alignment to a CATextLayerAlignmentMode
+        var alignmentMode: CATextLayerAlignmentMode {
+            let alignmentMode: CATextLayerAlignmentMode
+            switch self {
+            case .centre:
+                alignmentMode = .center
+            case .left:
+                alignmentMode = .left
+            case.right:
+                alignmentMode = .right
+            case .justified:
+                alignmentMode = .justified
+            }
+            return alignmentMode
+        }
+
+        /// Convert alignment to a text alignment
+        var textAlignment: NSTextAlignment {
+            let textAlignment: NSTextAlignment
+            switch self {
+            case .centre:
+                textAlignment = .center
+            case .left:
+                textAlignment = .left
+            case.right:
+                textAlignment = .right
+            case .justified:
+                textAlignment = .justified
+            }
+            return textAlignment
+        }
     }
 
+    /// Enum representing the weight of a font style
     public enum Weight {
         case light
         case regular
         case heavy
+
+        /// Convert font weight into a UIFont weight
+        var fontWeight: UIFont.Weight {
+            let fontWeight: UIFont.Weight
+            switch self {
+            case .light:
+                fontWeight = .light
+            case .regular:
+                fontWeight = .regular
+            case .heavy:
+                fontWeight = .heavy
+            }
+            return fontWeight
+        }
     }
 
     // State
     private let size: Size
     fileprivate let baseColour: UIColor
     private let weight: Weight
-    private let opacity: CGFloat
+    private let opacity: Opacity
     fileprivate let alignment: Alignment
-    private let customFontName: String?
+    private let customFontName: FontName?
 
-    public init(size: Size, baseColour: UIColor, weight: Weight, opacity: CGFloat, alignment: Alignment, customFontName: String? = nil) {
+    public init(size: Size, baseColour: UIColor, weight: Weight, opacity: Opacity, alignment: Alignment, customFontName: FontName? = nil) {
         self.size = size
         self.baseColour = baseColour
         self.weight = weight
@@ -99,28 +149,20 @@ public struct StyledFont {
     }
 }
 
+// MARK: - Private helper functions
 private extension StyledFont {
     /// Get the standard system font
     ///
     /// - Returns: the standard system font for the given settings
     func getStandardFont() -> UIFont {
-        let systemWeight: UIFont.Weight
-        switch weight {
-        case .light:
-            systemWeight = .light
-        case .regular:
-            systemWeight = .regular
-        case .heavy:
-            systemWeight = .heavy
-        }
-        return UIFont.systemFont(ofSize: size, weight: systemWeight)
+        return UIFont.systemFont(ofSize: size, weight: weight.fontWeight)
     }
 
     /// Return a custom font
     ///
     /// - Parameter name: the name of the font (i.e. the name used to load the font, not the description)
     /// - Returns: An instance of the font, or the standard font if a font couldn't be loaded for the name
-    func getCustomFont(for name: String) -> UIFont {
+    func getCustomFont(for name: FontName) -> UIFont {
         guard let font = UIFont(name: name, size: size) else {
             return getStandardFont()
         }
@@ -128,6 +170,7 @@ private extension StyledFont {
     }
 }
 
+// MARK: - Styled font helpers for UIButton
 public extension UIButton {
     func setStyledFontTitle(styledFont: StyledFont, title: String, for controlState: UIControl.State) {
         setAttributedTitle(styledFont.attributedString(string: title), for: controlState)
@@ -139,19 +182,7 @@ public extension UILabel {
     func setStyledFont(styledFont: StyledFont) {
         font = styledFont.font
         textColor = styledFont.colour
-
-        let textAlignment: NSTextAlignment
-        switch styledFont.alignment {
-        case .centre:
-            textAlignment = .center
-        case .left:
-            textAlignment = .left
-        case.right:
-            textAlignment = .right
-        case.justified:
-            textAlignment = .justified
-        }
-        self.textAlignment = textAlignment
+        textAlignment = styledFont.alignment.textAlignment
     }
 }
 
@@ -160,19 +191,7 @@ public extension UITextView {
     func setStyledFont(styledFont: StyledFont) {
         font = styledFont.font
         textColor = styledFont.colour
-
-        let textAlignment: NSTextAlignment
-        switch styledFont.alignment {
-        case .centre:
-            textAlignment = .center
-        case .left:
-            textAlignment = .left
-        case.right:
-            textAlignment = .right
-        case .justified:
-            textAlignment = .justified
-        }
-        self.textAlignment = textAlignment
+        textAlignment = styledFont.alignment.textAlignment
     }
 }
 
@@ -183,23 +202,12 @@ public extension UIBarButtonItem {
     }
 }
 
+// MARK: - Styled font helpers for CATextLayer
 public extension CATextLayer {
     func setStyledFont(styledFont: StyledFont) {
         font = CGFont(styledFont.font.fontName as CFString)
         fontSize = styledFont.font.pointSize
         foregroundColor = styledFont.colour.cgColor
-
-        let alignmentMode: String
-        switch styledFont.alignment {
-        case .centre:
-            alignmentMode = CATextLayerAlignmentMode.center.rawValue
-        case .left:
-            alignmentMode = CATextLayerAlignmentMode.left.rawValue
-        case.right:
-            alignmentMode = CATextLayerAlignmentMode.right.rawValue
-        case .justified:
-            alignmentMode = CATextLayerAlignmentMode.justified.rawValue
-        }
-        self.alignmentMode = CATextLayerAlignmentMode(rawValue: alignmentMode)
+        alignmentMode = styledFont.alignment.alignmentMode
     }
 }
