@@ -25,9 +25,9 @@ public struct StyledFont {
     /// NB in order to use custom fonts, they must first be installed
     /// in the project: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
     public struct CustomFontNames {
-        public static let fontLight = "FontAwesome5Pro-Light"
-        public static let fontRegular =  "FontAwesome5Pro-Regular"
-        public static let fontSolid = "FontAwesome5Pro-Solid"
+        public static let iconLight = "FontAwesome5Pro-Light"
+        public static let iconRegular =  "FontAwesome5Pro-Regular"
+        public static let iconSolid = "FontAwesome5Pro-Solid"
     }
 
     public struct Opacities {
