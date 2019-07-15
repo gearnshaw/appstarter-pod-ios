@@ -1,5 +1,5 @@
 PODS:
-  - appstarter-pod-ios (0.1.4):
+  - appstarter-pod-ios (0.1.5):
     - XCGLogger (~> 7.0)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
@@ -22,10 +22,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  appstarter-pod-ios: af8f7fadbfedf98b7e5fc0c768671e31e392c649
+  appstarter-pod-ios: 49a9a25632ad7c08858451384f8f08e9eb35b622
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
 PODFILE CHECKSUM: 4f07b01176984339265e443281689ba7f592a1b9
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.4
