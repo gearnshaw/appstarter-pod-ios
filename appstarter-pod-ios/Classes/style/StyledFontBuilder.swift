@@ -9,7 +9,7 @@ import Foundation
 
 public extension StyledFont {
     // A builder that can be used to quickly and easily configure styled fonts
-    public class Builder {
+    class Builder {
         // Defaults and configuration
         public static var defaultBaseColour = UIColor.black
 
@@ -25,7 +25,7 @@ public extension StyledFont {
         private var weight: Weight = .regular
         private var opacity: Opacity = Opacities.primary
         private var alignment: Alignment = .left
-        private var customFontName: FontName? = nil
+        private var customFontName: FontName?
 
         /// Public initialiser
         public init() {}
