@@ -9,8 +9,8 @@ import Foundation
 
 /// A protocol to allow logging in the app, whilst hiding the actual logging implementation
 public protocol Logging {
-    func debug(_ closure: @autoclosure () -> Any?)
-    func info(_ closure: @autoclosure () -> Any?)
-    func warning(_ closure: @autoclosure () -> Any?)
-    func error(_ closure: @autoclosure () -> Any?)
+    func logDebug(_ closure: @autoclosure () -> Any?)
+    func logInfo(_ closure: @autoclosure () -> Any?)
+    func logWarning(_ closure: @autoclosure () -> Any?)
+    func logError(_ closure: @autoclosure () -> Any?)
 }
