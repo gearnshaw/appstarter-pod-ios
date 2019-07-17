@@ -32,7 +32,8 @@ Utility files containing code to get an app up and running
   s.swift_version = '5.0'
 
   s.source_files = 'appstarter-pod-ios/Classes/**/*'
-  
+  s.resources = 'appstarter-pod-ios/Resources/**/*'
+
   # s.resource_bundles = {
   #   'appstarter-pod-ios' => ['appstarter-pod-ios/Assets/*.png']
   # }
