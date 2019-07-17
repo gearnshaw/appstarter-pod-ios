@@ -1,9 +1,7 @@
 sources:
-  - ./tasktime-ios-swift
+  - ./my_main_target_folder
 templates:
   include:
-    - ./SourceryTemplates
-  exclude:
-    - ./SourceryTemplates/AutoGenerateMockNew.swifttemplate
+    - ./Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Sourcery/Templates/Test
 output:
-  ./tasktime-ios-swiftTests/generated
+  ./my_test_target-folder/generated
