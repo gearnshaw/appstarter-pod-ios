@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'appstarter-pod-ios'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Utility files to get an app up and running'
 
 # This description is used to generate tags and improve search results.
