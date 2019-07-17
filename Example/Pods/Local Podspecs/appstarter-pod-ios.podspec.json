@@ -1,6 +1,6 @@
 {
   "name": "appstarter-pod-ios",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "Utility files to get an app up and running",
   "description": "Utility files containing code to get an app up and running",
   "homepage": "https://github.com/gearnshaw/appstarter-pod-ios",
@@ -13,13 +13,14 @@
   },
   "source": {
     "git": "https://github.com/gearnshaw/appstarter-pod-ios.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "11.0"
   },
   "swift_versions": "5.0",
   "source_files": "appstarter-pod-ios/Classes/**/*",
+  "resources": "appstarter-pod-ios/Resources/**/*",
   "dependencies": {
     "XCGLogger": [
       "~> 7.0"

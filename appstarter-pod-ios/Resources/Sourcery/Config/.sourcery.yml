@@ -1,0 +1,9 @@
+sources:
+  - ./tasktime-ios-swift
+templates:
+  include:
+    - ./SourceryTemplates
+  exclude:
+    - ./SourceryTemplates/AutoGenerateMockNew.swifttemplate
+output:
+  ./tasktime-ios-swiftTests/generated
