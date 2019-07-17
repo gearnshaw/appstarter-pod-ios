@@ -1,9 +1,11 @@
 PODS:
-  - appstarter-pod-ios (0.1.8):
+  - appstarter-pod-ios (0.1.9):
+    - Sourcery
     - XCGLogger (~> 7.0)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - Sourcery (0.16.1)
   - XCGLogger (7.0.0):
     - XCGLogger/Core (= 7.0.0)
   - XCGLogger/Core (7.0.0):
@@ -15,6 +17,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ObjcExceptionBridging
+    - Sourcery
     - XCGLogger
 
 EXTERNAL SOURCES:
@@ -22,8 +25,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  appstarter-pod-ios: c38bfa78de54bce08617fbdd530858ba378d3746
+  appstarter-pod-ios: be0d2b1aa062931556af9e9fc45661983995f4a6
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  Sourcery: 16779170d35ee204666843b09031f36721a84bcc
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
 PODFILE CHECKSUM: 4f07b01176984339265e443281689ba7f592a1b9
