@@ -161,11 +161,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/MockBalm/MockBalm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/appstarter-pod-ios/appstarter_pod_ios.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/MockBalm/MockBalm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/appstarter-pod-ios/appstarter_pod_ios.framework"
