@@ -1,8 +1,0 @@
-sources:
-  - ./my_main_target_folder
-  - ./Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Sourcery/Templates/Test
-templates:
-  include:
-    - ./Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Sourcery/Templates/Test
-output:
-  ./my_test_target-folder/generated
