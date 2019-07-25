@@ -31,7 +31,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  appstarter-pod-ios: dfcd10b95fb9a35014b1cdbd1fdf6359e5905105
+  appstarter-pod-ios: 56c781d1d5d18b6b9132c2863053dcf5329bbcc3
   MockBalm: cb5363f63bd50170fe02aa7c77377497e2b0160b
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   Sourcery: 3f406d227efd179773b3c3599ebd1700d1a6013c

@@ -1,0 +1,239 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+##############################
+## USAGE ##
+# Create a .env file (or otherwise set environment variables) providing the following variables:
+# TARGET = "bookmein"
+#
+#SCHEME_DEBUG = "debug"
+#SCHEME_TEST_DATA = "testData"
+#SCHEME_RELEASE = "release"
+##############################
+
+# variables
+outputDir = "./build"
+
+workspace = "#{ENV["TARGET"]}.xcworkspace"
+ipaName = "#{ENV["TARGET"]}.ipa"
+testFolder = "#{ENV["TARGET"]}Tests"
+
+
+# Devices and testing
+testDevices = ["iPhone 8"]
+snapshotDevices = [
+                     "iPhone XS Max",
+                     "iPhone XS",
+                     "iPhone 8",
+                     "iPhone 8 Plus",
+                     "iPhone SE"
+                  ]
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Take screenshots"
+  lane :screenshot do
+    devices = snapshotDevices
+    snapshot(devices: devices)
+    notifyBuild(success: true)
+  end
+
+  desc "Run before pull request"
+  lane :beforePullRequest do
+    puts "Target: #{ENV["TARGET"]}"
+    puts "Workspace: #{workspace}"
+    devices = testDevices
+    lint
+    tests(devices: devices)
+    notifyBuild(success: true)
+  end
+
+  desc "Release to Testflight"
+  lane :releaseBeta do
+    ensureClean
+    certificates
+    lint
+    devices = testDevices
+    tests(devices: devices)
+    increment
+    build
+    tagVersion
+    upload
+    notifyBuild(success: true)
+  end
+
+  desc "Submit the build for review. "
+  lane :releaseToStore do
+    versionNumber = get_version_number
+    buildNumber = get_build_number
+    appVersion = UI.input "Please enter the app version to edit or create on the store"
+    if UI.confirm "Going to release version #{versionNumber} and build #{buildNumber} as #{appVersion} on the store. Do you want to continue?"
+      if UI.confirm "Have you downloaded metadata using `bundle exec fastlane deliver download_metadata`?"
+        if UI.confirm "Have you updated release_notes.txt?"
+          if UI.confirm "Have you generated screenhots using `bundle exec fastlane screenshot`?"
+            ensure_git_status_clean
+            deliver(
+              app_version: appVersion,
+              build_number: buildNumber,
+              #submit_for_review: true, Comment in when app is ready for the store
+              #automatic_release: true, Comment in when ready
+              skip_binary_upload: true,
+              #reject_if_possible: true # Comment in if the app is already in review
+            )
+            tagAppStoreRelease(appVersion: appVersion)
+          end
+        end
+      end
+    end
+  end
+
+  desc "Set up test data for all simulators included in the snap file"
+  lane :createTestData do |options|
+    run_tests(
+      workspace: ENV["WORKSPACE"],
+      devices: options[:devices],
+      scheme: "#{ENV["SCHEME_TEST_DATA"]}",
+      reset_simulator: true,
+      disable_concurrent_testing: true
+    )
+  end
+
+  desc "Copy resources from appstarter and other helper packages"
+  lane :copyResources do
+    copySourceryTemplates
+    copySwiftLintConfig
+  end
+
+  desc "Copy the default fastfile and example .env file. NB you can't copy the fastfile until you have the fastfile, so this is for updates only"
+  lane :copyFastlane do
+    sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Fastlane/Fastfile  ../fastlane/Fastfile"
+    sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Fastlane/env.default  ../fastlane/.env.default"
+  end
+
+  desc "Copy sourcery templates from appstarter"
+  private_lane :copySourceryTemplates do
+    copy_artifacts(
+      keep_original: true,
+      artifacts: ["./Pods/MockBalm/MockBalm/Resources/Sourcery/Templates/Test/*.stencil"],
+      target_path: "SourceryTemplates/Test"
+    )
+  end
+
+  desc "Copy the SwiftLint yml files from appstarter"
+  private_lane :copySwiftLintConfig do
+    sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/SwiftLint/Root/root_swiftlint.yml ../.swiftlint.yml"
+    sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/SwiftLint/Test/test_swiftlint.yml ../#{testFolder}/.swiftlint.yml"
+  end
+
+  desc "Run swift lint"
+  private_lane :lint do
+    swiftlint(strict: true)
+  end
+
+  desc "Retrieve certificates for an app store build"
+  private_lane :certificates do
+    match(
+      #git_branch: matchBranch,
+      type: "appstore",
+      readonly: true # Comment this out to create certificates
+    )
+  end
+
+  desc "Ensure that we're on a clean release branch"
+  private_lane :ensureClean do
+    # Make sure everything is checked in
+    ensure_git_status_clean
+
+    # Make sure we're on the develop branch
+    ensure_git_branch(branch: 'develop')
+  end
+
+  desc "Run the unit tests"
+  private_lane :tests do |options|
+    run_tests(
+      workspace: workspace,
+      devices: options[:devices],
+      scheme: "#{ENV["SCHEME_RELEASE"]}"
+    )
+  end
+
+  desc "Increment version numbers"
+  private_lane :increment do
+    # increment the build number
+    increment_build_number
+
+    # increment the 'patch' in the version (major.minor.patch).
+    increment_version_number(
+      bump_type: "patch" # Automatically increment patch version number
+    )
+
+    # commit the version number (this will fail if anything else has changed)
+    commit_version_bump(message: 'Automatic version and build number increment')
+  end
+
+  desc "Tag a version built for TestFlight"
+  private_lane :tagVersion do
+    version = get_version_number(target: ENV["TARGET"])
+    tag(tag: version)
+  end
+
+  desc "Tag a version sent to the App Store"
+  private_lane :tagAppStoreRelease do |values|
+    version = get_version_number(target: ENV["TARGET"])
+    tagValue = "Release_#{values[:appVersion]}_#{version}"
+    tag(tag: tagValue)
+  end
+
+  desc "Tag the version"
+  private_lane :tag do |values|
+    # tag the build
+    git_tag = values[:tag]
+    add_git_tag(tag: git_tag)
+
+    # Push the changes to remote
+    push_to_git_remote
+  end
+
+  desc "Build the release"
+  private_lane :build do
+    gym(
+      workspace: ENV["TARGET"],
+      scheme: "#{ENV["SCHEME_DEBUG"]}",
+      output_directory: outputDir,
+      output_name: ipaName
+    )
+  end
+
+  desc "Upload the release"
+  private_lane :upload do
+    pilot(
+      ipa: outputDir + "/" + ipaName
+    )
+  end
+
+  lane :notifyBuild do |values|
+    successMessage = ""
+    if values[:success]
+      successMessage = "Success"
+    else
+      successMessage = "Failure"
+    end
+
+    notification(
+      title: "Fastlane",
+      subtitle: successMessage,
+      message: "Finished build",
+      app_icon: "https://s3-eu-west-1.amazonaws.com/fastlane.tools/fastlane"
+    )
+  end
+
+  error do |lane, exception, options|
+    notifyBuild(success: false)
+  end
+end
