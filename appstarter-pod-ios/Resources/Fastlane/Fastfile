@@ -106,6 +106,7 @@ platform :ios do
 
   desc "Copy resources from appstarter and other helper packages"
   lane :copyResources do
+    copyFastlane
     copySourceryTemplates
     copySwiftLintConfig
   end
