@@ -20,11 +20,15 @@
   },
   "swift_versions": "5.0",
   "source_files": "appstarter-pod-ios/Classes/**/*",
+  "resources": "MockBalm/Resources/**/*",
   "dependencies": {
     "XCGLogger": [
       "~> 7.0"
     ],
     "MockBalm": [
+
+    ],
+    "SwiftLint": [
 
     ]
   },

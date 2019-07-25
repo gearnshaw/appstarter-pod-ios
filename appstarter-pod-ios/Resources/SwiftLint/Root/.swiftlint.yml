@@ -1,0 +1,15 @@
+# paths to ignore during linting. Takes precedence over `included`.
+excluded:
+  - Pods
+  - fastlane/SnapshotHelper.swift
+  - tasktime-ios-swiftUITests
+
+# configurable rule overrides
+line_length: 150
+
+custom_rules:
+  comments_space: # From https://github.com/brandenr/swiftlintconfig
+    name: "Space After Comment"
+    regex: '(^ *//\w+)'
+    message: "There should be a space after //"
+    severity: warning

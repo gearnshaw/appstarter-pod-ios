@@ -32,6 +32,7 @@ Utility files containing code to get an app up and running
   s.swift_version = '5.0'
 
   s.source_files = 'appstarter-pod-ios/Classes/**/*'
+  s.resources = 'MockBalm/Resources/**/*'
 
   # s.resource_bundles = {
   #   'appstarter-pod-ios' => ['appstarter-pod-ios/Assets/*.png']
@@ -41,4 +42,5 @@ Utility files containing code to get an app up and running
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'XCGLogger', '~> 7.0'
   s.dependency 'MockBalm'
+  s.dependency 'SwiftLint'
 end
