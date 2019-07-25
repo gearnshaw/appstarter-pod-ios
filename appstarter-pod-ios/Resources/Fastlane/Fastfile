@@ -114,6 +114,7 @@ platform :ios do
   desc "Copy the default fastfile and example .env file. NB you can't copy the fastfile until you have the fastfile, so this is for updates only"
   lane :copyFastlane do
     sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Fastlane/Fastfile  ../fastlane/Fastfile"
+    sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Fastlane/Matchfile  ../fastlane/Matchfile"
     sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Fastlane/env.default  ../fastlane/.env.default"
   end
 
