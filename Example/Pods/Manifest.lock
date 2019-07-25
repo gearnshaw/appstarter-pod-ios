@@ -1,5 +1,5 @@
 PODS:
-  - appstarter-pod-ios (0.1.13):
+  - appstarter-pod-ios (0.1.14):
     - MockBalm
     - SwiftLint
     - XCGLogger (~> 7.0)
@@ -31,7 +31,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  appstarter-pod-ios: 56c781d1d5d18b6b9132c2863053dcf5329bbcc3
+  appstarter-pod-ios: e6db78d8681cd663a97597a9b079dc7b9de733b0
   MockBalm: cb5363f63bd50170fe02aa7c77377497e2b0160b
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   Sourcery: 3f406d227efd179773b3c3599ebd1700d1a6013c

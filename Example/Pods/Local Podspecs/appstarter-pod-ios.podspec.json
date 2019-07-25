@@ -1,6 +1,6 @@
 {
   "name": "appstarter-pod-ios",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "summary": "Utility files to get an app up and running",
   "description": "Utility files containing code to get an app up and running",
   "homepage": "https://github.com/gearnshaw/appstarter-pod-ios",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gearnshaw/appstarter-pod-ios.git",
-    "tag": "0.1.13"
+    "tag": "0.1.14"
   },
   "platforms": {
     "ios": "11.0"
