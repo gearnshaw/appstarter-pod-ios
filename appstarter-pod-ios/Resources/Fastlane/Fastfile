@@ -107,7 +107,7 @@ platform :ios do
   desc "Copy resources from appstarter and other helper packages"
   lane :copyResources do
     copyFastlane
-    copySourceryTemplates
+    copySourcery
     copySwiftLintConfig
   end
 
@@ -117,13 +117,17 @@ platform :ios do
     sh "cp ../Pods/appstarter-pod-ios/appstarter-pod-ios/Resources/Fastlane/env.default  ../fastlane/.env.default"
   end
 
-  desc "Copy sourcery templates from appstarter"
-  private_lane :copySourceryTemplates do
+  desc "Copy sourcery templates and config files from appstarter"
+  private_lane :copySourcery do
+    # Templates
     copy_artifacts(
       keep_original: true,
       artifacts: ["./Pods/MockBalm/MockBalm/Resources/Sourcery/Templates/Test/*.stencil"],
       target_path: "SourceryTemplates/Test"
     )
+
+    # Config
+    sh "cp ../Pods/MockBalm/MockBalm/Resources/Sourcery/Config/.sourcery.yml ../.sourcery.yml"
   end
 
   desc "Copy the SwiftLint yml files from appstarter"
