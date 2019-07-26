@@ -222,7 +222,7 @@ platform :ios do
   desc "Build the release"
   private_lane :build do
     gym(
-      workspace: ENV["TARGET"],
+      workspace: workspace,
       scheme: "#{ENV["SCHEME_DEBUG"]}",
       output_directory: outputDir,
       output_name: ipaName
