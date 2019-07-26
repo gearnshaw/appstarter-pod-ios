@@ -34,6 +34,19 @@ pod 'appstarter-pod-ios'
   1. Edit `.sourcery.yml` to set up for the current project
   1. Edit `SourceryTemplates/Test/LocalImports.stencil` to set up for the current project
   1. Add a Sourcery build phase to the project
+1. Set up automatic versioning. Follow the steps here: https://developer.apple.com/library/content/qa/qa1827/_index.html
+1. Set up certificates and provisioning profiles
+  1. Ensure source control is clean
+  1. Edit the `Fastfile` to turn off the `readonly` flag in the `:certificates` lane (see the comments in the file to explain which line to comment in)
+  1. Run `bundle exec fastlane certificates`
+  1. Reset the changes that were made to the fastlane script
+1. Run `bundle exec fastlane printVariables` and check against the Xcode project that everything is set up correctly
+
+## Updating to the latest version of appstarter-pod-ios
+1. Update the pod: `bundle exec pod update appstarter-pod-ios`
+1. Ensure everything is committed (or staged) in source control
+1. Update to the latest versions of scripts by running `bundle exec fastlane copyResources`
+1. *Check the changes in source control*. Some files, such as `.env.default` will overwrite the local versions, so you'll need to reset any files (or individual lines) that you don't want.
 
 ## Author
 

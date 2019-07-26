@@ -46,8 +46,7 @@ platform :ios do
 
   desc "Run before pull request"
   lane :beforePullRequest do
-    puts "Target: #{ENV["TARGET"]}"
-    puts "Workspace: #{workspace}"
+    printVariables
     devices = testDevices
     lint
     tests(devices: devices)
@@ -56,6 +55,7 @@ platform :ios do
 
   desc "Release to Testflight"
   lane :releaseBeta do
+    printVariables
     ensureClean
     certificates
     lint
@@ -70,6 +70,7 @@ platform :ios do
 
   desc "Submit the build for review. "
   lane :releaseToStore do
+    printVariables
     versionNumber = get_version_number
     buildNumber = get_build_number
     appVersion = UI.input "Please enter the app version to edit or create on the store"
@@ -95,6 +96,7 @@ platform :ios do
 
   desc "Set up test data for all simulators included in the snap file"
   lane :createTestData do |options|
+    printVariables
     run_tests(
       workspace: ENV["WORKSPACE"],
       devices: options[:devices],
@@ -102,6 +104,17 @@ platform :ios do
       reset_simulator: true,
       disable_concurrent_testing: true
     )
+  end
+
+  desc "Print out the variables that will be used in the build"
+  lane :printVariables do
+    puts "target: #{ENV["TARGET"]}"
+    puts "workspace: #{workspace}"
+    puts "ipa name: #{ipaName}"
+    puts "test folder: #{testFolder}"
+    puts "debug scheme: #{ENV["SCHEME_DEBUG"]}"
+    puts "test data scheme: #{ENV["SCHEME_TEST_DATA"]}"
+    puts "release scheme: #{ENV["SCHEME_RELEASE"]}"
   end
 
   desc "Copy resources from appstarter and other helper packages"
