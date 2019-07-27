@@ -15,6 +15,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		F9ABE9DFF230F7D6F11CDAD3 /* Pods_appstarter_pod_ios_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01883DA9714F74BF0D75B37B /* Pods_appstarter_pod_ios_Example.framework */; };
+		FAA2F53E22EC7E0000A3FE01 /* Comparable+extensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F53D22EC7E0000A3FE01 /* Comparable+extensionsTest.swift */; };
+		FAA2F54022EC7FE600A3FE01 /* Double+ExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F53F22EC7FE600A3FE01 /* Double+ExtensionsTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BB15C402E750B738B723B241 /* Pods-appstarter-pod-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appstarter-pod-ios_Tests.debug.xcconfig"; path = "Target Support Files/Pods-appstarter-pod-ios_Tests/Pods-appstarter-pod-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4D498F4F418678F57F6952 /* appstarter-pod-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "appstarter-pod-ios.podspec"; path = "../appstarter-pod-ios.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EDEFB356352039E9385CB5B1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FAA2F53D22EC7E0000A3FE01 /* Comparable+extensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+extensionsTest.swift"; sourceTree = "<group>"; };
+		FAA2F53F22EC7FE600A3FE01 /* Double+ExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ExtensionsTest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FAA2F53C22EC7DD200A3FE01 /* extensions */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -157,6 +162,15 @@
 				44AB18343B8226EC69C612A1 /* Pods-appstarter-pod-ios_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FAA2F53C22EC7DD200A3FE01 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAA2F53D22EC7E0000A3FE01 /* Comparable+extensionsTest.swift */,
+				FAA2F53F22EC7FE600A3FE01 /* Double+ExtensionsTest.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				FAA2F53E22EC7E0000A3FE01 /* Comparable+extensionsTest.swift in Sources */,
+				FAA2F54022EC7FE600A3FE01 /* Double+ExtensionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

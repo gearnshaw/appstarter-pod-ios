@@ -2,7 +2,6 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Example/Pods
 
 disabled_rules: # rules that are switched on by default that we don't want to use
-  - todo
 
 opt_in_rules: # rules that are off by default that we do want to use
   - implicitly_unwrapped_optional
