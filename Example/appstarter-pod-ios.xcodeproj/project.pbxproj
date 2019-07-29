@@ -126,6 +126,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FAA2F55322EDC6E100A3FE01 /* misc */,
 				FAA2F53C22EC7DD200A3FE01 /* extensions */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -168,6 +169,13 @@
 				FAA2F53F22EC7FE600A3FE01 /* Double+ExtensionsTest.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		FAA2F55322EDC6E100A3FE01 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

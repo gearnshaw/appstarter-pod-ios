@@ -51,10 +51,10 @@ public extension UIButton {
     /// Apply a styled button to a button
     ///
     /// - Parameter styledButton: the styled button to apply
-    func apply(styledButton: StyledButton, title: String) {
+    func apply(styledButton: StyledButton, title: String, for state: UIControl.State = .normal) {
         // Title style and colours
         contentEdgeInsets = styledButton.insets
-        setStyledFontTitle(styledFont: styledButton.titleStyle, title: title, for: .normal)
+        setStyledFontTitle(styledFont: styledButton.titleStyle, title: title, for: state)
         backgroundColor = styledButton.backgroundColour
         layer.borderWidth = styledButton.borderWidth
         layer.borderColor = styledButton.borderColour.cgColor

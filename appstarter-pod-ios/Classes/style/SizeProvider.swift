@@ -20,6 +20,9 @@ public struct SizeProvider {
         case menuIconOffset // gridspace * 5
     }
 
+    // Public initialiser
+    public init() {}
+
     /// Get a size for a given
     ///
     /// - Parameters:
