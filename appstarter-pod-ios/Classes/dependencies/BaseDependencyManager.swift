@@ -11,14 +11,14 @@ import Foundation
 open class BaseDependencyManager {
 
     // Public initialiser
-    public init(){}
-    
-    // MARK:- Singleton variables
+    public init() {}
+
+    // MARK: - Singleton variables
 //    public lazy var myString: String = {
 //        return ""
 //    }()
 
-    // MARK:- Factoried variables
+    // MARK: - Factoried variables
     public var sizeProvider: SizeProvider {
         return SizeProvider()
     }
