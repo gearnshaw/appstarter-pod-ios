@@ -78,3 +78,12 @@ public extension Future {
         }
     }
 }
+
+// MARK: - An extension on future that will decode data
+public extension Future where Value == Data {
+    func decoded<T: Decodable>() -> Future<T> {
+        return transformed(with: {
+            try JSONDecoder().decode(T.self, from: $0)
+        })
+    }
+}
