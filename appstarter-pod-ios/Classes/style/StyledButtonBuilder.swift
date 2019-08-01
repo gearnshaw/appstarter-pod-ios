@@ -12,7 +12,7 @@ public extension StyledButton {
     class Builder {
         private var shape = StyledButton.Shape.pill
         private var borderWidth: CGFloat = 0
-        private var borderColour = UIColor.clear
+        private var borderColour = UIColor.black
         private var backgroundColour = UIColor.clear
         private var titleStyle = StyledFont.Builder().build()
         private var hasShadow = false
