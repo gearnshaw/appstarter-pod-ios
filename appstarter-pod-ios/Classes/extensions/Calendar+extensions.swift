@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO: Unit test
 public extension Calendar {
     /// Takes an array of components with a date, and returns a unique list of
     /// days covered by the components.
