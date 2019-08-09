@@ -20,12 +20,12 @@ public extension StyledFont {
             self.defaultBaseColour = defaultBaseColour
         }
 
-        private var size: Size = Sizes.body
+        private var size: Size = .body
         private var baseColour: UIColor = defaultBaseColour
         private var weight: Weight = .regular
-        private var opacity: Opacity = Opacities.primary
+        private var opacity: Opacity = .primary
         private var alignment: Alignment = .left
-        private var customFontName: FontName?
+        private var customFontName: CustomFontName?
 
         /// Public initialiser
         public init() {}
@@ -72,7 +72,7 @@ public extension StyledFont.Builder {
         return self
     }
 
-    func with(customFontName: StyledFont.FontName) -> StyledFont.Builder {
+    func with(customFontName: StyledFont.CustomFontName) -> StyledFont.Builder {
         self.customFontName = customFontName
         return self
     }

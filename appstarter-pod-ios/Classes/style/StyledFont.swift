@@ -11,32 +11,12 @@ import UIKit
 /// A struct to encapsulate text styles in Sketch
 public struct StyledFont {
     public typealias Size = CGFloat
-    public struct Sizes {
-        public static let small: Size = 10
-        public static let caption: Size = 12
-        public static let subheader: Size = 16
-        public static let body: Size = 20
-        public static let title: Size = 30
-        public static let headline: Size = 24
-        public static let display: Size = 32
-    }
 
     /// Constants for the names of commonly used fonts.
     /// NB in order to use custom fonts, they must first be installed
     /// in the project: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
-    public typealias FontName = String
-    public struct CustomFontNames {
-        public static let iconLight: FontName = "FontAwesome5Pro-Light"
-        public static let iconRegular: FontName =  "FontAwesome5Pro-Regular"
-        public static let iconSolid: FontName = "FontAwesome5Pro-Solid"
-    }
-
+    public typealias CustomFontName = String
     public typealias Opacity = CGFloat
-    public struct Opacities {
-        public static let primary: Opacity = 0.99
-        public static let secondary: Opacity = 0.7
-        public static let disabled: Opacity = 0.5
-    }
 
     /// Enum representing text alignment of the font style
     public enum Alignment {
@@ -105,9 +85,9 @@ public struct StyledFont {
     private let weight: Weight
     private let opacity: Opacity
     fileprivate let alignment: Alignment
-    private let customFontName: FontName?
+    private let customFontName: CustomFontName?
 
-    public init(size: Size, baseColour: UIColor, weight: Weight, opacity: Opacity, alignment: Alignment, customFontName: FontName? = nil) {
+    public init(size: Size, baseColour: UIColor, weight: Weight, opacity: Opacity, alignment: Alignment, customFontName: CustomFontName? = nil) {
         self.size = size
         self.baseColour = baseColour
         self.weight = weight
@@ -201,7 +181,7 @@ private extension StyledFont {
     ///
     /// - Parameter name: the name of the font (i.e. the name used to load the font, not the description)
     /// - Returns: An instance of the font, or the standard font if a font couldn't be loaded for the name
-    func getCustomFont(for name: FontName) -> UIFont {
+    func getCustomFont(for name: CustomFontName) -> UIFont {
         guard let font = UIFont(name: name, size: size) else {
             return getStandardFont()
         }
@@ -249,4 +229,29 @@ public extension CATextLayer {
         foregroundColor = styledFont.colour.cgColor
         alignmentMode = styledFont.alignment.alignmentMode
     }
+}
+
+// MARK: - Standard values of size
+public extension StyledFont.Size {
+    static let small: StyledFont.Size = 10
+    static let caption: StyledFont.Size = 12
+    static let subheader: StyledFont.Size = 16
+    static let body: StyledFont.Size = 20
+    static let title: StyledFont.Size = 30
+    static let headline: StyledFont.Size = 24
+    static let display: StyledFont.Size = 32
+}
+
+// MARK: - Standard custom font names
+public extension StyledFont.CustomFontName {
+    static let iconLight: StyledFont.CustomFontName = "FontAwesome5Pro-Light"
+    static let iconRegular: StyledFont.CustomFontName =  "FontAwesome5Pro-Regular"
+    static let iconSolid: StyledFont.CustomFontName = "FontAwesome5Pro-Solid"
+}
+
+// MARK: - Standard opacities
+public extension StyledFont.Opacity {
+    static let primary: StyledFont.Opacity = 0.9
+    static let secondary: StyledFont.Opacity = 0.7
+    static let disabled: StyledFont.Opacity = 0.5
 }
