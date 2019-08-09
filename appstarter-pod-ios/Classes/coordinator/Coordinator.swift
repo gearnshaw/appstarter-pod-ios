@@ -16,3 +16,10 @@ public protocol Coordinator {
 
     func start()
 }
+
+/// An extension of Coordinator to use on coordinators that will be used on tab bars.
+/// To use, ensure that the tab index of the coordinator is set **before** callingn `start()`
+/// The start function should create a `UITabBarItem` from the root view controller in the coordinator.
+public protocol TabbableCoordinator: Coordinator {
+    var tabIndex: Int { get set }
+}
