@@ -10,7 +10,7 @@ import UIKit
 
 /// A struct to make it easy to reference sizes when laying out UI
 public struct SizeProvider {
-    private let gridSpace = 8
+    private let gridSpace: Double = 8
 
     public enum Name {
         case custom
@@ -29,8 +29,8 @@ public struct SizeProvider {
     ///   - sizeName: the name of the size
     ///   - multiplier: the multiplier to multiply the size by
     /// - Returns: the CGFloat size
-    public func getSize(sizeName: Name, multiplier: Int = 1) -> CGFloat {
-        let retval: Int
+    public func getSize(sizeName: Name, multiplier: Double = 1) -> CGFloat {
+        let retval: Double
         switch sizeName {
         case .custom,
              .grid:
