@@ -149,6 +149,45 @@ public struct StyledFont {
     }
 }
 
+// MARK: - Create images from style text
+public extension StyledFont {
+    /// Generates an image representation of a string in a given style
+    ///
+    /// - Parameter string: the string
+    /// - Returns: an image of the string in a given style
+    func createImageFor(string: String) -> UIImage? {
+        let symbol = attributedString(string: string)
+        let mutableSymbol = NSMutableAttributedString(attributedString: symbol)
+        let symbolSize = mutableSymbol.size()
+        let rect = CGRect(x: 0, y: 0, width: symbolSize.width, height: symbolSize.height)
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        let textStyle: NSTextAlignment
+        switch alignment {
+        case .left:
+            textStyle = .left
+        case .centre:
+            textStyle = .center
+        case .right:
+            textStyle = .right
+        case .justified:
+            textStyle = .justified
+        }
+        paragraphStyle.alignment = textStyle
+
+        mutableSymbol.addAttribute(NSAttributedString.Key.paragraphStyle,
+                                   value: paragraphStyle,
+                                   range: NSRange(location: 0, length: mutableSymbol.length))
+
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        mutableSymbol.draw(in: rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return image
+    }
+}
+
 // MARK: - Private helper functions
 private extension StyledFont {
     /// Get the standard system font
