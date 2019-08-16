@@ -50,6 +50,7 @@ platform :ios do
     devices = testDevices
     lint
     tests(devices: devices)
+    outdatedPods
     notifyBuild(success: true)
   end
 
@@ -180,6 +181,11 @@ platform :ios do
       devices: options[:devices],
       scheme: "#{ENV["SCHEME_RELEASE"]}"
     )
+  end
+
+  desc "Check for outdated pods"
+  private_lane :outdatedPods do
+    sh("bundle exec pod outdated")
   end
 
   desc "Increment version numbers"
