@@ -43,4 +43,5 @@ Utility files containing code to get an app up and running
   s.dependency 'XCGLogger', '~> 7.0'
   s.dependency 'MockBalm'
   s.dependency 'SwiftLint'
+  s.dependency 'SnapKit'
 end
